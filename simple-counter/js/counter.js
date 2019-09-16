@@ -1,18 +1,22 @@
-
+let funt;
+let callBackEndFunt
+let callBackProgress
 var t = 60;
-function init(timeInMins)
+function init(timeInMins, callBackProg, callBackEnd)
 {
+    callBackEndFunt = callBackEnd;
+    callBackProgress = callBackProg;
     t = 60 * timeInMins;
-    setInterval('timer()', 1000);
+    funt = setInterval('timer()', 1000,);
 }
 
 
-function timer(callBack)
+function timer()
 {
-   document.getElementById("ti").innerHTML = getCounter(--t);
+   callBackProgress(getCounter(--t))
    if(t == 0){
         clearInterval(funt);
-        callBack;
+        callBackEndFunt();
         return;
     }
 } 

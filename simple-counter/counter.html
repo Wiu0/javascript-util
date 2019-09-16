@@ -2,10 +2,18 @@
     <head>
         <script type="text/javascript" src="js/counter.js"></script>
         <script>
+        function over(){
+            document.getElementById("ti").innerHTML = 'ITS OVER';
+        }
+        function progress(timer){
+            document.getElementById("ti").innerHTML = timer;
+        }
+        
         function load(){
             var n = new URLSearchParams(window.location.search).get('mins');
-            if(n > 0) init(n)   
+            if(n > 0) init(n, progress,  over)   
         }
+    
         </script>
     </head>
     <body onLoad = "load()">
