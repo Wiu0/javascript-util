@@ -1,0 +1,14 @@
+<html>
+    <head>
+        <script type="text/javascript" src="js/counter.js"></script>
+        <script>
+        function load(){
+            var n = new URLSearchParams(window.location.search).get('mins');
+            if(n > 0) init(n)   
+        }
+        </script>
+    </head>
+    <body onLoad = "load()">
+        <h1 id = "ti" align = "center">Use Url Param 'mins' to set counter. Example: /simple-counter/counter.html?mins=60 </h1>
+    </body>
+</html>
